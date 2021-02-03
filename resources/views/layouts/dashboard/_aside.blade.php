@@ -15,9 +15,10 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-home"></i><span>@lang('site.dashboard')</span></a></li>
             <li><a href="{{ route('dashboard.employees.index') }}"><i class="fa fa-users"></i><span>@lang('site.employees')</span></a></li>
+            <li><a href="{{ route('dashboard.employee.getSalary') }}"><i class="fa fa-money"></i><span>@lang('site.salary-register')</span></a></li>
 
-
-            {{--<li><a href="{{ route('dashboard.categories.index') }}"><i class="fa fa-book"></i><span>@lang('site.categories')</span></a></li>--}}
+            <li><a href="{{ route('dashboard.employee.statistics') }}"><i class="fa fa-pie-chart"></i><span>@lang('site.statistics')</span></a></li>
+            <li><a href="{{ route('dashboard.employee.getOvertime') }}"><i class="fa fa-clock-o"></i><span>@lang('site.le-at')</span></a></li>
             {{----}}
             {{----}}
             {{--<li><a href="{{ route('dashboard.users.index') }}"><i class="fa fa-users"></i><span>@lang('site.users')</span></a></li>--}}

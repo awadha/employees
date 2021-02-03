@@ -30,6 +30,7 @@
 
     @endif
     <link rel="stylesheet" href="{{ asset('dashboard_files/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard_files/css/mdia.css') }}">
     <style>
         .mr-2{
             margin-right: 5px;

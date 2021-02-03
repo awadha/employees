@@ -22,10 +22,12 @@ class EmployeeController extends Controller
     public function show(Employee $employee){
         return view("dashboard.employees.show", compact("employee"));
     }
-    public function getSalary() {
+    public function getSalary(Request $request) {
         $employees =
-            Employee::select("id", "name","salary" , "allowances" ,
-                "abbsentRate" ,"abbsentDays" ,"overtimeRate" ,"overtime","number", "advance", "delay", "tax", "insurances", "total")->get();
+            Employee::when($request->search, function($q) use ($request) {
+                return $q->where('name', 'like', '%' . $request->search . '%')
+                    ->orWhere('number', 'like', '%' . $request->search . '%');
+            })->latest()->paginate(2);
         return view("dashboard.employees.employee-salary", compact("employees"));
     }
     public function getOvertime(Request $request) {
@@ -34,8 +36,6 @@ class EmployeeController extends Controller
             return $q->where('name', 'like', '%' . $request->search . '%')
                 ->orWhere('number', 'like', '%' . $request->search . '%');
         })->latest()->paginate(2);
-      /*  select("id", "name","salary" , "allowances" ,
-                "abbsentRate" ,"abbsentDays" ,"overtimeRate" ,"overtime","number", "advance", "late", "leaving", "attendees", "leaveEarly")->get();*/
         return view("dashboard.employees.get-overtime", compact("employees"));
     }
     public function statistics() {

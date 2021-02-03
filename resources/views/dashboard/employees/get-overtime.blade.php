@@ -4,39 +4,33 @@
 @endsection
 @section('content')
     <div class="content-wrapper">
-
         <section class="content-header">
-
-            <div class="title-top">
-                <h4>@lang('site.le-at')</h4>
-            </div>
-
             <ol class="breadcrumb">
                 <li><a href="{{ route("dashboard.index") }}"><i class="fa fa-home"></i> @lang('site.dashboard')</a> </li>
                 <li><a href="{{ route("dashboard.employees.index") }}"><i class="fa fa-users"></i> @lang('site.employees')</a> </li>
-                <li class="active"><i class="fa fa-users"></i> @lang('site.le-at')</li>
+                <li class="active"> @lang('site.le-at')</li>
             </ol>
         </section>
-
+        @php
+            $dates =  date('Y / m / d')
+        @endphp
         <section class="content">
-
-            <div class="box box-solid">
-
-                <div class="box-header">
+            <div class="card-container">
+                <h3 class="pro-right">@lang("site.le-at")</h3>
+                <h3 class="pro-top-left">@lang("site.today-date"){{ $dates }}</h3>
+                <div class="skills">
                     <div class="row">
                         <div class="col-md-6">
-                            <h3 class="box-title">@lang("site.le-at")</h3>
-                        </div>
-                        <div class="col-md-6">
-                            <form method="get">
-                                <input name="search" type="search" placeholder="بحث"/>
+                            <form action="{{ route("dashboard.employee.getOvertime") }}" method="get">
+                                @csrf
+                                <div class="form-group">
+                                    <input class="form-control" type="search" name="search" placeholder="@lang("site.search")" />
+                                </div>
                             </form>
                         </div>
                     </div>
-                </div>
-                <div class="overtime">
-                  @if ($employees->count() > 0)
-                        <table class="table text-center">
+                    @if ($employees->count() > 0)
+                        <table class="fl-table">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -66,17 +60,11 @@
                         </table>
                     @else
                         <h4 class="alert alert-info text-center">@lang("site.no_data")</h4>
-                  @endif
-
-                   {{ $employees->appends(request()->query())->links() }}
-
+                    @endif
+                            <div class="chart" id="line-chart" style="height: 200px;"></div>
                 </div>
-                <!-- /.box-body -->
-
             </div>
-
         </section><!-- end of content -->
 
     </div><!-- end of content wrapper -->
-
 @stop
