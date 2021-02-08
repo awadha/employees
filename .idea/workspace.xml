@@ -3,6 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="8bd610b6-b093-488d-a006-b2f2fe5a5877" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_20_072143_create_employees_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_20_072143_create_employees_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard_files/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/dashboard_files/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/employees/employee-salary.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/employees/employee-salary.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/employees/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/employees/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/employees/statistics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/statistics.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard/_aside.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/dashboard/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/dashboard/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,6 +172,7 @@
       <recent name="$PROJECT_DIR$/resources/views/auth" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/dashboard" />
       <recent name="$PROJECT_DIR$/resources/views/dashboard/employees/include" />
       <recent name="$PROJECT_DIR$/public/dashboard_files/img" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Dashboard" />

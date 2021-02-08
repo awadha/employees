@@ -159,6 +159,7 @@ button.primary.ghost {
 .skills h3 {
     display: inline-block;
 }
+
 .skills ul {
     list-style-type: none;
     margin: 0;
@@ -334,19 +335,24 @@ table {
 
     }
 }
-.test {
+.skills ul.test {
     text-align: center;
     padding: 20px 0;
 }
-.test li {
+.skills ul.test li {
     display: inline-block;
     margin: 10px;
+    border: 0;
 }
-.test li a, .test li a span {
+.test li span {
+    color: #eee;
+    margin: 10px 0;
+}
+.test li a, .test li span {
     display: block;
 }
 .test li a {
-    background-color: #1f1a35;
+    background-color: #222d32;
     color: #eee;
     width: 90px;
     height: 90px;
@@ -356,12 +362,10 @@ table {
     transition: 0.5s;
 }
 .test li a:hover {
-
     -webkit-box-shadow: -1px 1px 5px 5px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 1px 5px 5px rgba(0,0,0,0.75);
     box-shadow: -1px 1px 5px 5px rgba(0,0,0,0.75);
 }
-
 .circular-chart {
     display: block;
     margin: 10px auto;

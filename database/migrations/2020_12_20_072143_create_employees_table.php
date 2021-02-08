@@ -21,7 +21,7 @@ class CreateEmployeesTable extends Migration
             $table->bigInteger('number');
             $table->string("image")->default("default.jpg");
             $table->date("date_employment");
-            $table->smallInteger("totalEmployees");
+
             //the morning
             $table->time("attendees");
             $table->time("leaving");
@@ -43,7 +43,6 @@ class CreateEmployeesTable extends Migration
             $table->float("insurances");
             $table->float("tax");
             $table->float("total");
-            $table->float("totalSalaries");
             $table->rememberToken();
             $table->timestamps();
         });

@@ -14,8 +14,7 @@ Route::group(
         Route::get("/employees/{employee}", "EmployeeController@show")->name("employee.show");
         Route::get("/get-salary", "EmployeeController@getSalary")->name("employee.getSalary");
         Route::get("/get-overtime", "EmployeeController@getOvertime")->name("employee.getOvertime");
-        Route::get("/statistics", "EmployeeController@statistics")->name("employee.statistics");
-
+        Route::get("/statistics", "StatisticController@statistics")->name("statistics");
     });
 });
 

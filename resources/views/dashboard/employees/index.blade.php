@@ -19,33 +19,38 @@
                    <h3 class="pro-right">@lang("site.employees")</h3>
                    <h3 class="pro-top-left">@lang("site.today-date"){{ $dates }}</h3>
                    <div class="skills">
-                       <div class="row">
-                           <div class="col-md-6">
-                               <form action="{{ route("dashboard.employees.index") }}" method="get">
-                                   @csrf
+                       @if ($employees->count() > 0)
+                           <div class="row">
+                               <div class="col-md-6">
+                                   <form action="{{ route("dashboard.employees.index") }}" method="get">
+                                       @csrf
                                        <div class="form-group">
                                            <input class="form-control" type="search" name="search" placeholder="@lang("site.search")" />
                                        </div>
-                               </form>
+                                   </form>
+                               </div>
                            </div>
-                       </div>
-                       <div class="row">
-                           @foreach ($employees as $employee)
-                           <div class="col-sm-6 col-md-4">
-                              <div class="cards text-center">
-                                 <header>
-                                     <h3 class="pro-right">@lang("site.number_employee") {{ $employee->number }}</h3>
-                                     <img class="img-thumbnail" src="{{ $employee->image_path }}" alt="@lang("site.name")" />
-                                 </header>
-                                  <div class="box-card">
-                                       <h4><span>@lang("site.name") </span> {{ $employee->name }}</h4>
-                                       <p>@lang("site.total_salary") <span>{{ $employee->total }}</span></p>
-                                      <a class="btn buttons-color" target="_blank" href="{{ route("dashboard.employee.show", $employee->id) }}">@lang("site.moving")</a>
-                                  </div>
-                              </div>
+                           <div class="row">
+                               @foreach ($employees as $employee)
+                                   <div class="col-sm-6 col-md-4">
+                                       <div class="cards text-center">
+                                           <header>
+                                               <h3 class="pro-right">@lang("site.number_employee") {{ $employee->number }}</h3>
+                                               <img class="img-thumbnail" src="{{ $employee->image_path }}" alt="@lang("site.name")" />
+                                           </header>
+                                           <div class="box-card">
+                                               <h4><span>@lang("site.name") </span> {{ $employee->name }}</h4>
+                                               <p>@lang("site.total_salary") <span>{{ $employee->total }}</span></p>
+                                               <a class="btn buttons-color" target="_blank" href="{{ route("dashboard.employee.show", $employee->id) }}">@lang("site.moving")</a>
+                                           </div>
+                                       </div>
+                                   </div>
+                               @endforeach
                            </div>
-                           @endforeach
-                       </div>
+                       @else
+                           <h4 class="alert alert-info text-center">@lang("site.no_data")</h4>
+                       @endif
+
                        <div class="box-body border-radius-none">
                            <div class="chart" id="line-chart" style="height: 250px;"></div>
                        </div>

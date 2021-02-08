@@ -31,7 +31,12 @@
                     </div>
                     @if ($employees->count() > 0)
                     @include("dashboard.employees.include.salary-table")
+                    @else
+                        <h4 class="alert alert-info text-center">@lang("site.no_data")</h4>
                     @endif
+
+                        <div style="height: 250px;"></div>
+
                 </div>
 
             </div>

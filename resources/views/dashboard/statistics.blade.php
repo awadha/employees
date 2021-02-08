@@ -36,9 +36,8 @@
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
                                           />
-                                          @foreach($employees as $employee)
-                                              <text x="18" y="20.35" class="percentage">{{ $employee->totalEmployees }}</text>
-                                          @endforeach
+
+                                              <text x="18" y="20.35" class="percentage">{{ $statistics->total_employees}}</text>
                                       </svg>
                                       <p class="text-center title">@lang("site.total-employees")</p>
                                   </div>
@@ -57,9 +56,8 @@
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
                                             />
-                                            @foreach($employees as $employee)
-                                                <text x="18" y="20.35" class="percentage">{{ $employee->totalSalaries }} </text>
-                                            @endforeach
+
+                                                <text x="18" y="20.35" class="percentage">{{ $statistics->total_salaries}}</text>
                                         </svg>
                                         <p class="text-center title">@lang("site.total-salaries-emp")</p>
                                     </div>
